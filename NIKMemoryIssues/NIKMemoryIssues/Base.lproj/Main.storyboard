@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hzr-Rm-oaf">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NIKMemoryIssues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="lts-uQ-E8A">
+                                <rect key="frame" x="79.333333333333329" y="423.66666666666669" width="234.33333333333337" height="108.66666666666669"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDI-Gq-0fI">
+                                        <rect key="frame" x="0.0" y="0.0" width="234.33333333333334" height="38.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Retain Cycle With Protocols"/>
+                                        <connections>
+                                            <segue destination="8b6-Pq-dvO" kind="show" id="ZD5-vM-Fqw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfz-cc-BWt">
+                                        <rect key="frame" x="0.0" y="70.333333333333314" width="234.33333333333334" height="38.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Retain Cycle With Closure"/>
+                                        <connections>
+                                            <segue destination="WMF-6y-Eis" kind="show" id="emH-rM-w2k"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lts-uQ-E8A" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8Cr-i8-vJC"/>
+                            <constraint firstItem="lts-uQ-E8A" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="LIC-xh-wKx"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="s1W-Df-cdP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826.71755725190837" y="-218.3098591549296"/>
+        </scene>
+        <!--Leaky View Controller-->
+        <scene sceneID="n0N-pl-qYt">
+            <objects>
+                <viewController id="8b6-Pq-dvO" customClass="LeakyViewController" customModule="NIKMemoryIssues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1FF-Ro-9ce">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4n-gU-mhH">
+                                <rect key="frame" x="16" y="427.33333333333331" width="361" height="101.66666666666669"/>
+                                <string key="text">1. Navigate back to the main screen.
+2. Open this screen again.
+3. Repeat 3–4 times.
+4. Debug with Memory Graph.
+5. Search for "LeakyViewController"</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jU0-qo-FNt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="P4n-gU-mhH" firstAttribute="leading" secondItem="jU0-qo-FNt" secondAttribute="leading" constant="16" id="2fV-HK-mka"/>
+                            <constraint firstItem="P4n-gU-mhH" firstAttribute="centerX" secondItem="jU0-qo-FNt" secondAttribute="centerX" id="YFf-IA-1Pl"/>
+                            <constraint firstItem="P4n-gU-mhH" firstAttribute="centerY" secondItem="jU0-qo-FNt" secondAttribute="centerY" id="d2x-nn-wS9"/>
+                            <constraint firstItem="jU0-qo-FNt" firstAttribute="trailing" secondItem="P4n-gU-mhH" secondAttribute="trailing" constant="16" id="z5i-gA-x6o"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="b8E-Y3-jXR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ppj-0l-ToT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1652.6717557251907" y="-985.21126760563391"/>
+        </scene>
+        <!--Closure Leak View Controller-->
+        <scene sceneID="0Bm-wN-tdh">
+            <objects>
+                <viewController id="WMF-6y-Eis" customClass="ClosureLeakViewController" customModule="NIKMemoryIssues" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AkN-4U-r0e">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nu5-2f-vOK">
+                                <rect key="frame" x="16" y="427.33333333333331" width="361" height="101.66666666666669"/>
+                                <string key="text">1. Navigate back to the main screen.
+2. Open this screen again.
+3. Repeat 3–4 times.
+4. Debug with Memory Graph.
+5. Search for "ClosureLeakViewController"</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Ag-1i-S2b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Ag-1i-S2b" firstAttribute="trailing" secondItem="nu5-2f-vOK" secondAttribute="trailing" constant="16" id="1vK-4i-VOi"/>
+                            <constraint firstItem="nu5-2f-vOK" firstAttribute="centerY" secondItem="9Ag-1i-S2b" secondAttribute="centerY" id="Wq1-xH-HCc"/>
+                            <constraint firstItem="nu5-2f-vOK" firstAttribute="leading" secondItem="9Ag-1i-S2b" secondAttribute="leading" constant="16" id="cmB-h0-sMy"/>
+                            <constraint firstItem="nu5-2f-vOK" firstAttribute="centerX" secondItem="9Ag-1i-S2b" secondAttribute="centerX" id="f1k-Ba-cXy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="wj2-wH-k24"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Djm-gj-iEC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797.709923664122" y="-218.3098591549296"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LEC-PI-TNM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hzr-Rm-oaf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Up-6n-SYw">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="znI-WI-I9h"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r8y-01-a6U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100" y="-218.3098591549296"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,4 +1,4 @@
-# Malloc Stack Logging & Memory Graph Debugger (iOS)
+# Finding Retain Cycles in iOS: Memory Graph + Malloc Stack Logging
 
 This repository is a companion to the article [Malloc Stack Logging and Memory Graph Debugger](https://medium.com/@esmuil/finding-retain-cycles-in-ios-memory-graph-malloc-stack-logging)
 It demonstrates how to detect, trace, and analyze memory issues in iOS using Xcode’s debugging tools.
